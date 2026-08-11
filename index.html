@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isiri Global Spa — Jayanagar, Bengaluru</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/png" href="media/favicon.png">
+<link rel="shortcut icon" type="image/png" href="media/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,450;9..144,600;9..144,340&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="membership-offers.css">
+<link rel="stylesheet" href="hero-offers.css">
+</head>
+<body>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="pre-flower" aria-hidden="true">
+    <svg viewBox="0 0 200 200">
+      <defs>
+        <radialGradient id="petalGradOuter" cx="50%" cy="88%" r="85%">
+          <stop offset="0%" stop-color="#E6C76B" stop-opacity="0.95"/>
+          <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.45"/>
+        </radialGradient>
+        <radialGradient id="petalGradInner" cx="50%" cy="88%" r="85%">
+          <stop offset="0%" stop-color="#F7F4EA" stop-opacity="0.98"/>
+          <stop offset="100%" stop-color="#E6C76B" stop-opacity="0.7"/>
+        </radialGradient>
+      </defs>
+
+      <g transform="rotate(0 100 100)"><g class="petal-scale" style="--d:0.00s"><path d="M100,100 C86,76 80,42 100,14 C120,42 114,76 100,100 Z" fill="url(#petalGradOuter)"/></g></g>
+      <g transform="rotate(45 100 100)"><g class="petal-scale" style="--d:0.045s"><path d="M100,100 C86,76 80,42 100,14 C120,42 114,76 100,100 Z" fill="url(#petalGradOuter)"/></g></g>
+      <g transform="rotate(90 100 100)"><g class="petal-scale" style="--d:0.09s"><path d="M100,100 C86,76 80,42 100,14 C120,42 114,76 100,100 Z" fill="url(#petalGradOuter)"/></g></g>
+      <g transform="rotate(135 100 100)"><g class="petal-scale" style="--d:0.135s"><path d="M100,100 C86,76 80,42 100,14 C120,42 114,76 100,100 Z" fill="url(#petalGradOuter)"/></g></g>
+      <g transform="rotate(180 100 100)"><g class="petal-scale" style="--d:0.18s"><path d="M100,100 C86,76 80,42 100,14 C120,42 114,76 100,100 Z" fill="url(#petalGradOuter)"/></g></g>
+      <g transform="rotate(225 100 100)"><g class="petal-scale" style="--d:0.225s"><path d="M100,100 C86,76 80,42 100,14 C120,42 114,76 100,100 Z" fill="url(#petalGradOuter)"/></g></g>
+      <g transform="rotate(270 100 100)"><g class="petal-scale" style="--d:0.27s"><path d="M100,100 C86,76 80,42 100,14 C120,42 114,76 100,100 Z" fill="url(#petalGradOuter)"/></g></g>
+      <g transform="rotate(315 100 100)"><g class="petal-scale" style="--d:0.315s"><path d="M100,100 C86,76 80,42 100,14 C120,42 114,76 100,100 Z" fill="url(#petalGradOuter)"/></g></g>
+
+      <g transform="rotate(30 100 100)"><g class="petal-scale inner" style="--d:0.40s"><path d="M100,100 C86,76 80,42 100,14 C120,42 114,76 100,100 Z" fill="url(#petalGradInner)"/></g></g>
+      <g transform="rotate(90 100 100)"><g class="petal-scale inner" style="--d:0.45s"><path d="M100,100 C86,76 80,42 100,14 C120,42 114,76 100,100 Z" fill="url(#petalGradInner)"/></g></g>
+      <g transform="rotate(150 100 100)"><g class="petal-scale inner" style="--d:0.50s"><path d="M100,100 C86,76 80,42 100,14 C120,42 114,76 100,100 Z" fill="url(#petalGradInner)"/></g></g>
+      <g transform="rotate(210 100 100)"><g class="petal-scale inner" style="--d:0.55s"><path d="M100,100 C86,76 80,42 100,14 C120,42 114,76 100,100 Z" fill="url(#petalGradInner)"/></g></g>
+      <g transform="rotate(270 100 100)"><g class="petal-scale inner" style="--d:0.60s"><path d="M100,100 C86,76 80,42 100,14 C120,42 114,76 100,100 Z" fill="url(#petalGradInner)"/></g></g>
+      <g transform="rotate(330 100 100)"><g class="petal-scale inner" style="--d:0.65s"><path d="M100,100 C86,76 80,42 100,14 C120,42 114,76 100,100 Z" fill="url(#petalGradInner)"/></g></g>
+
+      <circle class="pre-core" cx="100" cy="100" r="6" fill="#F7F4EA"/>
+    </svg>
+  </div>
+  <div class="pre-mark">Isiri Global <em>Spa</em></div>
+  <div class="pre-line"></div>
+  <div class="pre-tag">Gathering the stillness</div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#space">The Space</a>
+  <a href="#booking">Book</a>
+  <a href="#visit">Visit</a>
+  <a class="btn-primary" href="https://wa.me/919980508222" target="_blank" rel="noopener"><span>Book on WhatsApp</span></a>
+</div>
+
+<header id="siteHeader">
+  <nav>
+    <a class="logo" href="#top" data-magnetic><img src="media/logo-lotus.svg" alt="" class="logo-icon" width="28" height="28">Isiri Global <em>Spa</em></a>
+    <div class="nav-links">
+      <a href="#space" data-magnetic>The Space</a>
+      <a href="#rituals" data-magnetic>Treatments</a>
+      <a href="#pricing" data-magnetic>Pricing</a>
+      <a href="#membership" data-magnetic>Membership</a>
+      <a href="#visit" data-magnetic>Visit</a>
+    </div>
+    <a class="nav-cta" href="https://wa.me/919980508222" target="_blank" rel="noopener" data-magnetic><span>Book on WhatsApp</span></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg-image" id="heroBgImage">
+    <img src="media/hero-bg.jpg" alt="Rolled white towels, black river stones, candlelight and a lotus flower reflected in still water" loading="eager" fetchpriority="high">
+  </div>
+  <div class="hero-candle-glow" aria-hidden="true"></div>
+  <div class="hero-mist"></div>
+  <div class="hero-lotus-float" aria-hidden="true">🌸</div>
+  <div class="hero-vignette"></div>
+  <div class="smoke-thread" aria-hidden="true">
+    <svg viewBox="0 0 4 900" preserveAspectRatio="none">
+      <path class="smoke-path" d="M2,0 C 6,80 -4,160 2,240 C 8,320 -4,400 2,480 C 8,560 -4,640 2,720 C 6,800 0,860 2,900"/>
+    </svg>
+  </div>
+
+  <!-- HANGING "TODAY'S BEST SELLER" TAG -->
+  <div class="hero-hangtag" id="heroHangTag">
+    <div class="hangtag-threads" aria-hidden="true">
+      <span class="thread thread-l"></span>
+      <span class="thread thread-r"></span>
+    </div>
+    <a class="hangtag-card hangtag-scroll-link" href="https://wa.me/919980508222" aria-label="Today's best seller — Wine plus Cream Massage, ₹1799. Tap to see pricing.">
+      <div class="hangtag-ambient" aria-hidden="true"></div>
+      <span class="hangtag-sparkle sp1" aria-hidden="true"></span>
+      <span class="hangtag-sparkle sp2" aria-hidden="true"></span>
+      <span class="hangtag-sparkle sp3" aria-hidden="true"></span>
+      <span class="hangtag-corner tl" aria-hidden="true"></span>
+      <span class="hangtag-corner tr" aria-hidden="true"></span>
+      <span class="hangtag-corner bl" aria-hidden="true"></span>
+      <span class="hangtag-corner br" aria-hidden="true"></span>
+      <span class="hangtag-badge">⭐ Most Popular</span>
+      <span class="hangtag-fire">🔥 Today's Best Seller</span>
+      <span class="hangtag-divider" aria-hidden="true"><i></i></span>
+      <span class="hangtag-name">Wine + Cream Massage</span>
+      <span class="hangtag-price"><span class="cur">₹</span>1,799</span>
+      <span class="hangtag-divider" aria-hidden="true"><i></i></span>
+      <span class="hangtag-btn"><span>Book Now →</span></span>
+    </a>
+  </div>
+
+  <div class="hero-content">
+    <div class="wrap hero-inner">
+      <div class="hero-glow"></div>
+
+      <!-- COMPACT BEST-SELLER BAR (mobile/tablet — replaces the hanging card so nothing gets covered) -->
+      <a class="hangtag-mobile-bar hangtag-scroll-link" href="#pricing" aria-label="Today's best seller — Wine plus Cream Massage, ₹1799. Tap to see pricing.">
+        <span class="hgm-fire">🔥 Best Seller</span>
+        <span class="hgm-name">Wine + Cream Massage</span>
+        <span class="hgm-price">₹1,799</span>
+        <span class="hgm-btn">Book Now →</span>
+      </a>
+
+      <div class="rating-badge"><span class="stars">★★★★★</span><span>4.9 rated &middot; 111 Google reviews</span></div>
+      <h1 class="hero-title">
+        <span class="line"><span>Relax Your Body</span></span>
+        <span class="line"><span>Refresh Your Mind</span></span>
+        <span class="line"><span class="accent">Restore Your Soul</span></span>
+      </h1>
+      <p class="hero-sub">Experience premium Thai Spa, Aroma Therapy, Deep Tissue Massage and Wellness Rituals designed for complete relaxation. Tucked into Jayanagar, Bengaluru.</p>
+      <div class="hero-cta-row">
+        <a class="btn-primary" href="https://wa.me/919980508222" target="_blank" rel="noopener" data-magnetic><span>Book Appointment</span></a>
+        <a class="btn-ghost" href="#rituals" data-magnetic>Explore Services</a>
+      </div>
+
+      <!-- PREMIUM HERO OFFER TICKER -->
+      <div class="hero-ticker-wrap" id="heroTickerWrap" role="region" aria-label="Today's offers, scrolling">
+        <div class="hero-ticker-track" id="heroTickerTrack">
+          <a class="ticker-pill" href="https://wa.me/919980508222?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Wine%20%2B%20Cream%20Massage%20offer" target="_blank" rel="noopener"><span class="tp-icon">🍷</span><span class="tp-text">Wine + Cream Massage — <span class="tp-price">₹1799</span></span></a>
+          <a class="ticker-pill" href="https://wa.me/919980508222?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Wine%20%2B%20Body%20Scrub%20offer" target="_blank" rel="noopener"><span class="tp-icon">🍷</span><span class="tp-text">Wine + Body Scrub — <span class="tp-price">₹1999</span></span></a>
+          <a class="ticker-pill" href="https://wa.me/919980508222?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Chocolate%20Massage%20offer" target="_blank" rel="noopener"><span class="tp-icon">🍫</span><span class="tp-text">Chocolate Massage — <span class="tp-price">₹1699</span></span></a>
+          <a class="ticker-pill" href="https://wa.me/919980508222?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Almond%20Massage%20offer" target="_blank" rel="noopener"><span class="tp-icon">🌿</span><span class="tp-text">Almond Massage — <span class="tp-price">₹1699</span></span></a>
+          <a class="ticker-pill" href="https://wa.me/919980508222?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Royal%20Rose%20Massage%20offer" target="_blank" rel="noopener"><span class="tp-icon">🌸</span><span class="tp-text">Royal Rose Massage — <span class="tp-price">₹1999</span></span></a>
+          <a class="ticker-pill" href="https://wa.me/919980508222?text=Hi%2C%20I%27d%20like%20to%20book%20the%204%20Hands%20Massage%20offer" target="_blank" rel="noopener"><span class="tp-icon">🤲</span><span class="tp-text">4 Hands Massage — <span class="tp-price">₹2299</span></span></a>
+          <a class="ticker-pill" href="https://wa.me/919980508222?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Thai%20Massage%20offer" target="_blank" rel="noopener"><span class="tp-icon">🪷</span><span class="tp-text">Thai Massage — <span class="tp-price">₹1799</span></span></a>
+          <a class="ticker-pill" href="https://wa.me/919980508222?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Aroma%20Therapy%20offer" target="_blank" rel="noopener"><span class="tp-icon">🌺</span><span class="tp-text">Aroma Therapy — <span class="tp-price">₹999</span></span></a>
+          <a class="ticker-pill" href="https://wa.me/919980508222?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Swedish%20Massage%20offer" target="_blank" rel="noopener"><span class="tp-icon">💆</span><span class="tp-text">Swedish Massage — <span class="tp-price">₹1499</span></span></a>
+          <a class="ticker-pill" href="https://wa.me/919980508222?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Deep%20Tissue%20Massage%20offer" target="_blank" rel="noopener"><span class="tp-icon">🔥</span><span class="tp-text">Deep Tissue Massage — <span class="tp-price">₹1699</span></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="space" class="space-section">
+  <div class="wrap">
+    <div class="space-grid">
+      <div class="space-visual reveal">
+        <img class="space-photo" src="media/img-space-jelly-footsoak.jpg" alt="Pink foot soak with rose petals and citrus in a spa bowl" loading="lazy">
+        <div class="frame-glow"></div>
+        <div class="space-label">Treatment room &middot; low light, warm cedar</div>
+      </div>
+      <div class="space-copy reveal">
+        <span class="eyebrow">The space</span>
+        <h2>A room built to slow your breathing down</h2>
+        <p>Candlelight, warm bamboo, and a thread of sandalwood smoke that never quite settles — the room does half the work before your therapist even walks in.</p>
+        <p>No piped-in playlists, no rush between sessions. Just quiet, warm stone, and enough time to actually unclench.</p>
+        <div class="space-facts">
+          <div class="space-fact"><span class="num">6</span><span class="lab">Treatment rooms</span></div>
+          <div class="space-fact"><span class="num">9:30–22:00</span><span class="lab">Open daily</span></div>
+          <div class="space-fact"><span class="num">4.9★</span><span class="lab">111 reviews</span></div>
+          <div class="space-fact"><span class="num">Jayanagar</span><span class="lab">9th Block, Bengaluru</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="numbers" class="numbers">
+  <div class="numbers-bg"><img src="media/spa_hero.png" alt="Lotus flower and towels reflected in still water" loading="lazy"></div>
+  <div class="wrap">
+    <div class="numbers-grid reveal">
+      <div class="number-card">
+        <span class="number-value" data-count="15" data-suffix="+">0</span>
+        <span class="number-label">Years Experience</span>
+      </div>
+      <div class="number-card">
+        <span class="number-value" data-count="25000" data-suffix="+">0</span>
+        <span class="number-label">Happy Guests</span>
+      </div>
+      <div class="number-card">
+        <span class="number-value" data-count="45" data-suffix="+">0</span>
+        <span class="number-label">Signature Treatments</span>
+      </div>
+      <div class="number-card">
+        <span class="number-value" data-count="100" data-suffix="%">0</span>
+        <span class="number-label">Certified Therapists</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rituals" class="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Treatments</span>
+      <h2>Therapies drawn from Thai tradition</h2>
+      <p>Every session is led by a certified therapist and tailored to what your body's actually asking for that day — stress relief, pain relief, or simply stillness.</p>
+    </div>
+    <div class="service-grid reveal" id="serviceGrid">
+
+      <div class="service-card" data-tilt>
+        <div class="service-image">
+          <img src="media/img-warm-oils.jpg" alt="Oil and cream massage" loading="lazy">
+          <div class="service-shine"></div>
+          <span class="service-icon-badge"><svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3c2 3 5 5 5 9a5 5 0 1 1-10 0c0-4 3-6 5-9Z"/></svg></span>
+        </div>
+        <div class="service-body">
+          <h3>Oil / Cream Massage</h3>
+          <p>Smooth, gliding strokes with a nourishing oil or cream base — a gentle, classic full-body reset.</p>
+          <div class="service-pricetable">
+            <div class="spt-col"><span class="spt-dur">45 min</span><span class="spt-amt">&#8377;1,300</span></div>
+            <div class="spt-col"><span class="spt-dur">60 min</span><span class="spt-amt">&#8377;1,500</span></div>
+            <div class="spt-col"><span class="spt-dur">90 min</span><span class="spt-amt">&#8377;2,000</span></div>
+          </div>
+          <div class="service-meta meta-end"><a href="https://wa.me/919980508222" target="_blank" rel="noopener">Book &rarr;</a></div>
+        </div>
+      </div>
+
+      <div class="service-card" data-tilt>
+        <div class="service-image">
+          <img src="media/img-oil-pour-candles.jpg" alt="Hot oil massage" loading="lazy">
+          <div class="service-shine"></div>
+          <span class="service-icon-badge"><svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3c2 3 5 5 5 9a5 5 0 1 1-10 0c0-4 3-6 5-9Z"/></svg></span>
+        </div>
+        <div class="service-body">
+          <h3>Hot Oil Massage</h3>
+          <p>Warmed oil worked deep into the muscles with steady pressure, easing stiffness and improving circulation.</p>
+          <div class="service-pricetable">
+            <div class="spt-col"><span class="spt-dur">45 min</span><span class="spt-amt">&#8377;1,500</span></div>
+            <div class="spt-col"><span class="spt-dur">60 min</span><span class="spt-amt">&#8377;1,800</span></div>
+            <div class="spt-col"><span class="spt-dur">90 min</span><span class="spt-amt">&#8377;2,200</span></div>
+          </div>
+          <div class="service-meta meta-end"><a href="https://wa.me/919980508222" target="_blank" rel="noopener">Book &rarr;</a></div>
+        </div>
+      </div>
+
+      <div class="service-card" data-tilt>
+        <div class="service-image">
+          <img src="media/img-candle-blooms.jpg" alt="Chocolate massage" loading="lazy">
+          <div class="service-shine"></div>
+          <span class="service-icon-badge"><svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12h16M4 12a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4M4 12a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4"/></svg></span>
+        </div>
+        <div class="service-body">
+          <h3>Chocolate Massage</h3>
+          <p>A rich, indulgent chocolate-infused therapy that softens skin while it melts away tension.</p>
+          <div class="service-pricetable">
+            <div class="spt-col"><span class="spt-dur">45 min</span><span class="spt-amt">&#8377;1,800</span></div>
+            <div class="spt-col"><span class="spt-dur">60 min</span><span class="spt-amt">&#8377;2,000</span></div>
+            <div class="spt-col"><span class="spt-dur">90 min</span><span class="spt-amt">&#8377;2,300</span></div>
+          </div>
+          <div class="service-meta meta-end"><a href="https://wa.me/919980508222" target="_blank" rel="noopener">Book &rarr;</a></div>
+        </div>
+      </div>
+
+      <div class="service-card" data-tilt>
+        <div class="service-image">
+          <img src="media/img-candlelight.jpg" alt="Wine massage" loading="lazy">
+          <div class="service-shine"></div>
+          <span class="service-icon-badge"><svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3c2 3 5 5 5 9a5 5 0 1 1-10 0c0-4 3-6 5-9Z"/></svg></span>
+        </div>
+        <div class="service-body">
+          <h3>Wine Massage</h3>
+          <p>Antioxidant-rich wine oils and slow, warming strokes for a truly indulgent, spa-signature ritual.</p>
+          <div class="service-pricetable">
+            <div class="spt-col"><span class="spt-dur">45 min</span><span class="spt-amt">&#8377;2,000</span></div>
+            <div class="spt-col"><span class="spt-dur">60 min</span><span class="spt-amt">&#8377;2,300</span></div>
+            <div class="spt-col"><span class="spt-dur">90 min</span><span class="spt-amt">&#8377;2,500</span></div>
+          </div>
+          <div class="service-meta meta-end"><a href="https://wa.me/919980508222" target="_blank" rel="noopener">Book &rarr;</a></div>
+        </div>
+      </div>
+
+      <div class="service-card" data-tilt>
+        <div class="service-image">
+          <img src="media/img-deep-tissue.jpg" alt="Deep tissue massage on the back" loading="lazy">
+          <div class="service-shine"></div>
+          <span class="service-icon-badge"><svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v5m-4 3h8m-8 0a4 4 0 1 0 8 0m-8 0v6a4 4 0 0 0 8 0v-6"/></svg></span>
+        </div>
+        <div class="service-body">
+          <h3>Deep Tissue Massage</h3>
+          <p>Slower, firmer strokes that work into chronic knots and muscle tension for lasting relief, not just a temporary loosen-up.</p>
+          <div class="service-pricetable">
+            <div class="spt-col"><span class="spt-dur">45 min</span><span class="spt-amt">&#8377;1,500</span></div>
+            <div class="spt-col"><span class="spt-dur">60 min</span><span class="spt-amt">&#8377;1,800</span></div>
+            <div class="spt-col"><span class="spt-dur">90 min</span><span class="spt-amt">&#8377;2,300</span></div>
+          </div>
+          <div class="service-meta meta-end"><a href="https://wa.me/919980508222" target="_blank" rel="noopener">Book &rarr;</a></div>
+        </div>
+      </div>
+
+      <div class="service-card" data-tilt>
+        <div class="service-image">
+          <img src="media/img-thai-massage.jpg" alt="Traditional Thai massage session" loading="lazy">
+          <div class="service-shine"></div>
+          <span class="service-icon-badge"><svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21c-4-2-7-6-7-10a7 7 0 0 1 14 0c0 4-3 8-7 10Z"/><path d="M12 21V9"/></svg></span>
+        </div>
+        <div class="service-body">
+          <h3>Traditional Thai Massage</h3>
+          <p>Assisted stretching and rhythmic pressure along the body's energy lines, to loosen what sitting all week has tightened.</p>
+          <div class="service-pricetable">
+            <div class="spt-col"><span class="spt-dur">45 min</span><span class="spt-amt">&#8377;1,500</span></div>
+            <div class="spt-col"><span class="spt-dur">60 min</span><span class="spt-amt">&#8377;1,800</span></div>
+            <div class="spt-col"><span class="spt-dur">90 min</span><span class="spt-amt">&#8377;2,200</span></div>
+          </div>
+          <div class="service-meta meta-end"><a href="https://wa.me/919980508222" target="_blank" rel="noopener">Book &rarr;</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="why" class="why-choose">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Why Isiri</span>
+      <h2>What sets the experience apart</h2>
+      <p>Small details, held to a high standard — the reasons guests come back every month instead of once a year.</p>
+    </div>
+    <div class="why-banner reveal">
+      <img src="media/img-why-oil-pour.jpg" alt="Therapist pouring warm massage oil over hands before a treatment" loading="lazy">
+      <span class="why-banner-cap">Step into stillness</span>
+    </div>
+    <div class="why-grid reveal">
+
+      <div class="why-card" data-tilt>
+        <span class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></span>
+        <h3>Luxury Interior</h3>
+        <p>Warm bamboo, low light and quiet corners designed to slow you down the moment you walk in.</p>
+      </div>
+
+      <div class="why-card" data-tilt>
+        <span class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21c-4-2-7-6-7-10a7 7 0 0 1 14 0c0 4-3 8-7 10Z"/><path d="M9.5 11.5 11 13l3.5-3.5"/></svg></span>
+        <h3>Certified Therapists</h3>
+        <p>Every therapist is formally trained and certified in Thai, deep tissue and aromatherapy technique.</p>
+      </div>
+
+      <div class="why-card" data-tilt>
+        <span class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3c2 3 5 5 5 9a5 5 0 1 1-10 0c0-4 3-6 5-9Z"/></svg></span>
+        <h3>Organic Oils</h3>
+        <p>Cold-pressed, natural oils and herbal blends — nothing synthetic touches your skin.</p>
+      </div>
+
+      <div class="why-card" data-tilt>
+        <span class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M8 15c1.2-1.4 2.5-2 4-2s2.8.6 4 2"/><circle cx="9" cy="10" r="0.6" fill="currentColor"/><circle cx="15" cy="10" r="0.6" fill="currentColor"/></svg></span>
+        <h3>Peaceful Environment</h3>
+        <p>No piped-in playlists, no rushing between sessions — just quiet, unhurried time.</p>
+      </div>
+
+      <div class="why-card" data-tilt>
+        <span class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 12h16"/></svg></span>
+        <h3>Private Rooms</h3>
+        <p>Six treatment rooms, each closed off for a session that's entirely your own.</p>
+      </div>
+
+      <div class="why-card" data-tilt>
+        <span class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2 3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6l-9-4Z"/><path d="M8.5 12.5 11 15l4.5-5"/></svg></span>
+        <h3>Premium Hygiene</h3>
+        <p>Fresh linens per guest, sanitised rooms between every session, no exceptions.</p>
+      </div>
+
+      <div class="why-card" data-tilt>
+        <span class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8.5" cy="9" r="3"/><circle cx="15.5" cy="9" r="3"/><path d="M3 20c.7-3.4 3-5 5.5-5s4.8 1.6 5.5 5M10 20c.7-3.4 3-5 5.5-5s4.8 1.6 5.5 5"/></svg></span>
+        <h3>Couple Spa Suites</h3>
+        <p>Side-by-side treatment for two, ideal for anniversaries or a slow Sunday together.</p>
+      </div>
+
+      <div class="why-card" data-tilt>
+        <span class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 6c0 8.8 6.2 15 15 15l2-4-6-2-1.5 1.5A12 12 0 0 1 7.5 9.5L9 8 7 2 4 5Z"/></svg></span>
+        <h3>Free Consultation</h3>
+        <p>A quick chat before every first visit, so your therapist knows exactly where to focus.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="pricing">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Packages</span>
+      <h2>Choose the Therapie that fits you</h2>
+      <p>Four curated packages, each layering in more time and more treatments. Every plan starts at just &#8377;2,999.</p>
+    </div>
+    <div class="price-grid reveal">
+
+      <div class="price-card">
+        <span class="price-tier">Silver</span>
+        <div class="price-amount"><span class="currency">&#8377;</span>2,999<span class="per">/ session</span></div>
+        <p class="price-desc">A focused reset for first-time guests or a quick midweek unwind.</p>
+        <ul class="price-list">
+          <li>60-min Traditional Thai or Deep Tissue massage</li>
+          <li>Hot towel finish</li>
+          <li>Complimentary herbal tea</li>
+        </ul>
+        <a class="price-cta" href="https://wa.me/919980508222" target="_blank" rel="noopener" data-magnetic><span>Book Silver &rarr;</span></a>
+      </div>
+
+      <div class="price-card">
+        <span class="price-tier">Gold</span>
+        <div class="price-amount"><span class="currency">&#8377;</span>4,999<span class="per">/ session</span></div>
+        <p class="price-desc">Our most-booked single session — a full body reset with warm oils.</p>
+        <ul class="price-list">
+          <li>90-min Hot Oil massage</li>
+          <li>Wine massage add-on</li>
+          <li>Hot stone finish</li>
+          <li>Complimentary herbal tea</li>
+        </ul>
+        <a class="price-cta" href="https://wa.me/919980508222" target="_blank" rel="noopener" data-magnetic><span>Book Gold &rarr;</span></a>
+      </div>
+
+      <div class="price-card featured">
+        <span class="price-badge">Most Popular</span>
+        <span class="price-tier">Platinum</span>
+        <div class="price-amount"><span class="currency">&#8377;</span>7,999<span class="per">/ session</span></div>
+        <p class="price-desc">The full ritual — massage, scrub &amp; polish, and a quiet room to yourself.</p>
+        <ul class="price-list">
+          <li>90-min Deep Tissue or Thai massage</li>
+          <li>45-min Chocolate massage</li>
+          <li>Wine massage finish</li>
+          <li>Hot stone touch</li>
+          <li>Herbal tea &amp; light snacks</li>
+        </ul>
+        <a class="price-cta" href="https://wa.me/919980508222" target="_blank" rel="noopener" data-magnetic><span>Book Platinum &rarr;</span></a>
+      </div>
+
+      <div class="price-card">
+        <span class="price-tier">Premium</span>
+        <div class="price-amount"><span class="currency">&#8377;</span>11,999<span class="per">/ session</span></div>
+        <p class="price-desc">A half-day of stillness — every signature ritual, unhurried.</p>
+        <ul class="price-list">
+          <li>120-min full body massage</li>
+          <li>Chocolate massage</li>
+          <li>Wine massage</li>
+          <li>Hot Oil finishing touch</li>
+          <li>Private room &amp; refreshments</li>
+        </ul>
+        <a class="price-cta" href="https://wa.me/919980508222" target="_blank" rel="noopener" data-magnetic><span>Book Premium &rarr;</span></a>
+      </div>
+
+    </div>
+    <p class="price-note reveal">Prices are per person and may vary slightly with add-ons. Message us on WhatsApp for a custom package.</p>
+  </div>
+</section>
+
+<section id="membership" class="membership-section">
+  <div class="mo-glow-a" aria-hidden="true"></div>
+  <div class="mo-glow-b" aria-hidden="true"></div>
+  <div class="mo-bg" aria-hidden="true">
+    <img class="mo-stone" src="media/img-bamboo-stone.jpg" alt="" loading="lazy">
+    <img class="mo-leaf" src="media/img-candle-blooms.jpg" alt="" loading="lazy">
+    <img class="mo-candle" src="media/img-candlelight.jpg" alt="" loading="lazy">
+  </div>
+  <div class="mo-particles" id="moParticles" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Membership</span>
+      <h2>Exclusive Membership Offer</h2>
+      <p>Relax More. Save More. Enjoy Premium Wellness Benefits.</p>
+    </div>
+    <div class="membership-grid">
+
+      <div class="membership-card">
+        <div class="mo-card-glow" aria-hidden="true"></div>
+        <span class="m-tier">Starter</span>
+        <div class="m-price"><span class="currency">&#8377;</span><span class="counter" data-target="6000">0</span></div>
+        <div class="m-hours">8 Hours</div>
+        <div class="m-validity">Validity &middot; 6 Months</div>
+        <ul class="m-benefits">
+          <li>1 Complimentary Massage Today</li>
+          <li>Choose Any Massage Menu</li>
+          <li>Priority Booking</li>
+        </ul>
+        <a class="m-btn" href="https://wa.me/919980508222?text=Hi%2C%20I%27d%20like%20to%20join%20the%20%E2%82%B96%2C000%20Starter%20membership" target="_blank" rel="noopener" data-magnetic><span>Join Now</span></a>
+      </div>
+
+      <div class="membership-card featured">
+        <div class="mo-card-glow" aria-hidden="true"></div>
+        <span class="m-badge">Most Popular</span>
+        <span class="m-tier">Signature</span>
+        <div class="m-price"><span class="currency">&#8377;</span><span class="counter" data-target="10000">0</span></div>
+        <div class="m-hours">15 Hours</div>
+        <div class="m-validity">Validity &middot; 8 Months</div>
+        <ul class="m-benefits">
+          <li>1 Complimentary Massage Today</li>
+          <li>Choose Any Massage Menu</li>
+          <li>1 Free 4 Hands / Body Scrub Session</li>
+          <li>Priority Booking</li>
+        </ul>
+        <a class="m-btn" href="https://wa.me/919980508222?text=Hi%2C%20I%27d%20like%20to%20become%20a%20%E2%82%B910%2C000%20Signature%20member" target="_blank" rel="noopener" data-magnetic><span>Become a Member</span></a>
+      </div>
+
+      <div class="membership-card">
+        <div class="mo-card-glow" aria-hidden="true"></div>
+        <span class="m-tier">Elite</span>
+        <div class="m-price"><span class="currency">&#8377;</span><span class="counter" data-target="15000">0</span></div>
+        <div class="m-hours">22 Hours</div>
+        <div class="m-validity">Validity &middot; 1 Year</div>
+        <ul class="m-benefits">
+          <li>1 Complimentary Massage Today</li>
+          <li>Choose Any Massage Menu</li>
+          <li>1 Free 4 Hands / Body Scrub Session</li>
+          <li>VIP Priority Booking</li>
+          <li>Exclusive Festival Offers</li>
+        </ul>
+        <a class="m-btn" href="https://wa.me/919980508222?text=Hi%2C%20I%27d%20like%20to%20get%20the%20%E2%82%B915%2C000%20Elite%20membership" target="_blank" rel="noopener" data-magnetic><span>Get Membership</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="rhythm" class="rhythm">
+  <div class="wrap">
+    <div class="rhythm-layout">
+      <div class="rhythm-content">
+        <div class="section-head reveal">
+          <span class="eyebrow">Good to know</span>
+          <h2>Open until 10:00 pm, most nights</h2>
+          <p>A rough sense of when the spa tends to fill up, so you can time a visit for when it's quietest.</p>
+        </div>
+        <div class="rhythm-grid reveal">
+          <div class="rhythm-col"><div class="rhythm-bar" data-h="55"></div><span class="rhythm-day">MON</span></div>
+          <div class="rhythm-col"><div class="rhythm-bar" data-h="48"></div><span class="rhythm-day">TUE</span></div>
+          <div class="rhythm-col"><div class="rhythm-bar" data-h="62"></div><span class="rhythm-day">WED</span></div>
+          <div class="rhythm-col"><div class="rhythm-bar" data-h="58"></div><span class="rhythm-day">THU</span></div>
+          <div class="rhythm-col today"><div class="rhythm-bar" data-h="40"></div><span class="rhythm-day">FRI</span></div>
+          <div class="rhythm-col"><div class="rhythm-bar" data-h="88"></div><span class="rhythm-day">SAT</span></div>
+          <div class="rhythm-col"><div class="rhythm-bar" data-h="80"></div><span class="rhythm-day">SUN</span></div>
+        </div>
+        <span class="rhythm-note eyebrow" style="color:#B8892B;">&#9679; Friday — currently less busy than usual</span>
+      </div>
+      <div class="rhythm-visual">
+        <img src="media/img-rhythm-hotstone.jpg" alt="Therapist performing a hot stone massage with candles and rose petals nearby" loading="lazy">
+        <div class="frame-glow"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">A quiet look inside</span>
+      <h2>The details you notice once you've sat down</h2>
+      <p>Warm textures, low light, and the small rituals — hot towels, oil warmed just right — that make the hour disappear.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item tall"><img src="media/img-candlelight.jpg" alt="Spa candles and towels" loading="lazy"><span class="gallery-cap">Candlelight</span></div>
+      <div class="gallery-item wide"><img src="media/img-treatment-room.jpg" alt="Spa massage table with towels" loading="lazy"><span class="gallery-cap">Treatment room</span></div>
+      <div class="gallery-item"><img src="media/img-warm-oils.jpg" alt="Aromatherapy oils" loading="lazy"><span class="gallery-cap">Warm oils</span></div>
+      <div class="gallery-item"><img src="media/img-bamboo-stone.jpg" alt="Bamboo and stones spa decor" loading="lazy"><span class="gallery-cap">Bamboo &amp; stone</span></div>
+      <div class="gallery-item wide"><img src="media/img-deep-tissue.jpg" alt="Hot stone therapy" loading="lazy"><span class="gallery-cap">Hot stones</span></div>
+      <div class="gallery-item tall"><img src="media/img-reflex-gallery.jpg" alt="Foot reflexology" loading="lazy"><span class="gallery-cap">Reflexology</span></div>
+      <div class="gallery-item tall wide"><img src="media/img-couple-candlelight.jpg" alt="Couple massage by candlelight" loading="lazy"><span class="gallery-cap">Couple's ritual</span></div>
+      <div class="gallery-item tall"><img src="media/img-oil-pour-candles.jpg" alt="Warm oil massage by candlelight" loading="lazy"><span class="gallery-cap">Signature oil pour</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="therapists" class="therapists">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Meet the team</span>
+      <h2>The hands behind every session</h2>
+      <p>Formally trained, certified, and genuinely good at what they do — every one of our therapists.</p>
+    </div>
+    <div class="therapist-grid reveal">
+
+      <div class="therapist-card" data-tilt>
+        <div class="therapist-photo"><img src="media/img-thai-massage.jpg" alt="Portrait of a senior spa therapist" loading="lazy"></div>
+        <h3>Anita Rao</h3>
+        <span class="therapist-role">Lead Thai Therapist &middot; 12 yrs</span>
+        <p>Trained in traditional Thai stretch therapy in Chiang Mai; our go-to for chronic tension.</p>
+        <div class="therapist-social">
+          <a href="https://wa.me/919980508222" target="_blank" rel="noopener" aria-label="Message on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M4 20c2-6 2-10 8-16 6 6 6 10 8 16"/></svg></a>
+        </div>
+      </div>
+
+      <div class="therapist-card" data-tilt>
+        <div class="therapist-photo"><img src="media/img-aroma.jpg" alt="Portrait of an aromatherapy specialist" loading="lazy"></div>
+        <h3>Priya Menon</h3>
+        <span class="therapist-role">Aromatherapy Specialist &middot; 8 yrs</span>
+        <p>Blends her own essential-oil mixes on-site, tailored to your mood and skin type.</p>
+        <div class="therapist-social">
+          <a href="https://wa.me/919980508222" target="_blank" rel="noopener" aria-label="Message on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M4 20c2-6 2-10 8-16 6 6 6 10 8 16"/></svg></a>
+        </div>
+      </div>
+
+      <div class="therapist-card" data-tilt>
+        <div class="therapist-photo"><img src="media/img-deep-tissue.jpg" alt="Portrait of a deep tissue massage expert" loading="lazy"></div>
+        <h3>Ramesh Kumar</h3>
+        <span class="therapist-role">Deep Tissue Expert &middot; 10 yrs</span>
+        <p>Firm, precise pressure work — the therapist most guests request by name for back pain.</p>
+        <div class="therapist-social">
+          <a href="https://wa.me/919980508222" target="_blank" rel="noopener" aria-label="Message on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M4 20c2-6 2-10 8-16 6 6 6 10 8 16"/></svg></a>
+        </div>
+      </div>
+
+      <div class="therapist-card" data-tilt>
+        <div class="therapist-photo"><img src="media/img-reflexology.jpg" alt="Portrait of a wellness and reflexology therapist" loading="lazy"></div>
+        <h3>Divya S.</h3>
+        <span class="therapist-role">Wellness &amp; Reflexology &middot; 6 yrs</span>
+        <p>Specialises in foot reflexology and head-neck-shoulder release for desk-bound guests.</p>
+        <div class="therapist-social">
+          <a href="https://wa.me/919980508222" target="_blank" rel="noopener" aria-label="Message on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M4 20c2-6 2-10 8-16 6 6 6 10 8 16"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="google-reviews" class="google-reviews">
+  <div class="wrap">
+    <div class="greviews-header reveal">
+      <span class="eyebrow">On Google</span>
+      <h2>Isiri Global Spa</h2>
+      <p class="greviews-address">2nd Floor, 873, 28th Main Rd, Corporation Colony, Jayanagara 9th Block, Jayanagar, Bengaluru, Karnataka 560069, India</p>
+      <div class="greviews-rating-row">
+        <span class="greviews-score">4.4</span>
+        <span class="greviews-stars">★★★★☆</span>
+        <span class="greviews-count">25 Google reviews</span>
+      </div>
+    </div>
+
+    <div class="greviews-marquee-wrap">
+      <div class="greviews-grid" id="greviewsGrid">
+
+      <div class="greview-card" data-tags="ambience" data-rating="5" data-days="150">
+        <div class="greview-top">
+          <div class="greview-avatar">SR</div>
+          <div class="greview-id">
+            <a class="greview-name" href="https://www.google.com/maps/contrib/104692444917704539311/reviews?hl=en-GB" target="_blank" rel="noopener">Sisindri Ravulapalli</a>
+            <a class="greview-meta" href="https://www.google.com/maps/contrib/104692444917704539311/reviews?hl=en-GB" target="_blank" rel="noopener">Local Guide &middot; 7 reviews &middot; 15 photos</a>
+          </div>
+        </div>
+        <div class="greview-stars-row"><span class="greview-stars">★★★★★</span><span class="greview-time">Edited 5 months ago</span></div>
+        <p class="greview-text">Visited Isiri Global Spa and really enjoyed the service. Clean rooms, soothing atmosphere, and overall a comfortable experience. Worth visiting again.</p>
+        <div class="greview-likes">&#10084;&#65039; 1</div>
+      </div>
+
+      <div class="greview-card" data-tags="therapist" data-rating="1" data-days="210">
+        <div class="greview-top">
+          <div class="greview-avatar">MM</div>
+          <div class="greview-id">
+            <a class="greview-name" href="https://www.google.com/maps/contrib/110494986679119487308/reviews?hl=en-GB" target="_blank" rel="noopener">Mgbh M</a>
+            <a class="greview-meta" href="https://www.google.com/maps/contrib/110494986679119487308/reviews?hl=en-GB" target="_blank" rel="noopener">Local Guide &middot; 5 reviews &middot; 13 photos</a>
+          </div>
+        </div>
+        <div class="greview-stars-row"><span class="greview-stars">★☆☆☆☆</span><span class="greview-time">7 months ago</span></div>
+        <p class="greview-text">Today i check in 7 pm and completed only offon hour, but they told 1 hour, therapist also not looking good, totally waste of money, i am very dispointed</p>
+        <div class="greview-likes">&#10084;&#65039;&#128591; 2</div>
+      </div>
+
+      <div class="greview-card" data-tags="money" data-rating="1" data-days="60">
+        <div class="greview-top">
+          <div class="greview-avatar">KN</div>
+          <div class="greview-id">
+            <a class="greview-name" href="https://www.google.com/maps/contrib/103077183313796021838/reviews?hl=en-GB" target="_blank" rel="noopener">Karthick N</a>
+            <a class="greview-meta" href="https://www.google.com/maps/contrib/103077183313796021838/reviews?hl=en-GB" target="_blank" rel="noopener">2 reviews</a>
+          </div>
+        </div>
+        <div class="greview-stars-row"><span class="greview-stars">★☆☆☆☆</span><span class="greview-time">2 months ago</span></div>
+        <p class="greview-text">Avoid visiting this place. They tell you something and do something. Worst place ever</p>
+      </div>
+
+      <div class="greview-card" data-tags="massage culture" data-rating="5" data-days="180">
+        <div class="greview-top">
+          <div class="greview-avatar">BB</div>
+          <div class="greview-id">
+            <a class="greview-name" href="https://www.google.com/maps/contrib/115716949525003871431/reviews?hl=en-GB" target="_blank" rel="noopener">Basavraj Basavraj</a>
+            <a class="greview-meta" href="https://www.google.com/maps/contrib/115716949525003871431/reviews?hl=en-GB" target="_blank" rel="noopener">3 reviews</a>
+          </div>
+        </div>
+        <div class="greview-stars-row"><span class="greview-stars">★★★★★</span><span class="greview-time">6 months ago</span></div>
+        <p class="greview-text">I visited today good massage and nice culture</p>
+        <div class="greview-likes">&#10084;&#65039; 1</div>
+      </div>
+
+      <div class="greview-card" data-tags="money therapist" data-rating="1" data-days="240">
+        <div class="greview-top">
+          <div class="greview-avatar">KK</div>
+          <div class="greview-id">
+            <a class="greview-name" href="https://www.google.com/maps/contrib/110930624071257265740/reviews?hl=en-GB" target="_blank" rel="noopener">Kamlesh Kumar</a>
+            <a class="greview-meta" href="https://www.google.com/maps/contrib/110930624071257265740/reviews?hl=en-GB" target="_blank" rel="noopener">2 reviews &middot; 2 photos</a>
+          </div>
+        </div>
+        <div class="greview-stars-row"><span class="greview-stars">★☆☆☆☆</span><span class="greview-time">8 months ago</span></div>
+        <p class="greview-text">Don't waste your money in this spa totally fake information they will give and tharpist is not genuine they don't know any massage</p>
+        <div class="greview-likes">&#10084;&#65039; 1</div>
+      </div>
+
+      <div class="greview-card" data-tags="therapist" data-rating="5" data-days="245">
+        <div class="greview-top">
+          <div class="greview-avatar">P</div>
+          <div class="greview-id">
+            <a class="greview-name" href="https://www.google.com/maps/contrib/113652669659888655939/reviews?hl=en-GB" target="_blank" rel="noopener">Praveenandu3126</a>
+            <a class="greview-meta" href="https://www.google.com/maps/contrib/113652669659888655939/reviews?hl=en-GB" target="_blank" rel="noopener">2 reviews</a>
+          </div>
+        </div>
+        <div class="greview-stars-row"><span class="greview-stars">★★★★★</span><span class="greview-time">8 months ago</span></div>
+        <p class="greview-text">Shuba is a great therapist she friendly well trained therapist good hearted &#128175;</p>
+        <div class="greview-likes">&#10084;&#65039; 1</div>
+      </div>
+
+      <div class="greview-card" data-tags="therapist massage" data-rating="5" data-days="365">
+        <div class="greview-top">
+          <div class="greview-avatar">G</div>
+          <div class="greview-id">
+            <a class="greview-name" href="https://www.google.com/maps/contrib/100924286601582645124/reviews?hl=en-GB" target="_blank" rel="noopener">Gatodgaja</a>
+            <a class="greview-meta" href="https://www.google.com/maps/contrib/100924286601582645124/reviews?hl=en-GB" target="_blank" rel="noopener">1 review</a>
+          </div>
+        </div>
+        <div class="greview-stars-row"><span class="greview-stars">★★★★★</span><span class="greview-time">a year ago</span></div>
+        <p class="greview-text">Very Will Manager will therapist and good and clean please I got good massage with good therapy &#128156;</p>
+        <div class="greview-likes">&#10084;&#65039; 3</div>
+      </div>
+
+      <div class="greview-card" data-tags="therapist" data-rating="5" data-days="370">
+        <div class="greview-top">
+          <div class="greview-avatar">A</div>
+          <div class="greview-id">
+            <a class="greview-name" href="https://www.google.com/maps/contrib/111238574983716584614/reviews?hl=en-GB" target="_blank" rel="noopener">Anwar</a>
+            <a class="greview-meta" href="https://www.google.com/maps/contrib/111238574983716584614/reviews?hl=en-GB" target="_blank" rel="noopener">1 review</a>
+          </div>
+        </div>
+        <div class="greview-stars-row"><span class="greview-stars">★★★★★</span><span class="greview-time">a year ago</span></div>
+        <p class="greview-text">Best spa and Great service with reasonable price.</p>
+        <div class="greview-likes">&#10084;&#65039; 2</div>
+      </div>
+
+      <div class="greview-card" data-tags="massage" data-rating="5" data-days="375">
+        <div class="greview-top">
+          <div class="greview-avatar">AA</div>
+          <div class="greview-id">
+            <a class="greview-name" href="https://www.google.com/maps/contrib/104647726498813328765/reviews?hl=en-GB" target="_blank" rel="noopener">Anupriya Anu</a>
+            <a class="greview-meta" href="https://www.google.com/maps/contrib/104647726498813328765/reviews?hl=en-GB" target="_blank" rel="noopener">3 reviews</a>
+          </div>
+        </div>
+        <div class="greview-stars-row"><span class="greview-stars">★★★★★</span><span class="greview-time">a year ago</span></div>
+        <p class="greview-text">Good massage and igenic Maintenance Therapy also very good</p>
+        <div class="greview-likes">&#10084;&#65039; 1</div>
+      </div>
+
+      <div class="greview-card" data-tags="ambience culture" data-rating="4" data-days="185">
+        <div class="greview-top">
+          <div class="greview-avatar">VR</div>
+          <div class="greview-id">
+            <a class="greview-name" href="https://www.google.com/maps/contrib/114135200738974339969/reviews?hl=en-GB" target="_blank" rel="noopener">Vishwas Reddy</a>
+            <a class="greview-meta" href="https://www.google.com/maps/contrib/114135200738974339969/reviews?hl=en-GB" target="_blank" rel="noopener">4 reviews</a>
+          </div>
+        </div>
+        <div class="greview-stars-row"><span class="greview-stars">★★★★☆</span><span class="greview-time">6 months ago</span></div>
+        <p class="greview-text">Nice atmosphere and great in culture</p>
+        <div class="greview-likes">&#10084;&#65039; 1</div>
+      </div>
+
+      <div class="greview-card" data-tags="ambience massage" data-rating="5" data-days="380">
+        <div class="greview-top">
+          <div class="greview-avatar">RM</div>
+          <div class="greview-id">
+            <a class="greview-name" href="https://www.google.com/maps/contrib/100639037923891591964/reviews?hl=en-IN" target="_blank" rel="noopener">Roopa Mondal</a>
+            <a class="greview-meta" href="https://www.google.com/maps/contrib/100639037923891591964/reviews?hl=en-IN" target="_blank" rel="noopener">2 reviews</a>
+          </div>
+        </div>
+        <div class="greview-stars-row"><span class="greview-stars">★★★★★</span><span class="greview-time">a year ago</span></div>
+        <p class="greview-text">Nice ambience and good massage centre</p>
+        <div class="greview-likes">&#10084;&#65039; 2</div>
+      </div>
+
+      <div class="greview-card" data-tags="" data-rating="5" data-days="385">
+        <div class="greview-top">
+          <div class="greview-avatar">LM</div>
+          <div class="greview-id">
+            <a class="greview-name" href="https://www.google.com/maps/contrib/114137200022851477945/reviews?hl=en-IN" target="_blank" rel="noopener">L MANJUNATH</a>
+            <a class="greview-meta" href="https://www.google.com/maps/contrib/114137200022851477945/reviews?hl=en-IN" target="_blank" rel="noopener">9 reviews &middot; 4 photos</a>
+          </div>
+        </div>
+        <div class="greview-stars-row"><span class="greview-stars">★★★★★</span><span class="greview-time">a year ago</span></div>
+        <p class="greview-text">Best spa friendly receptionist best therapist</p>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Good to know</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq-grid">
+    <div class="faq-visual reveal">
+      <img src="media/img-lavender-steam.jpg" alt="Incense cones burning on a dark, calm background" loading="lazy">
+    </div>
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What should I wear during a treatment?</span>
+          <span class="faq-plus"></span>
+        </button>
+        <div class="faq-a"><p>We provide disposable undergarments and a robe. You'll always be modestly draped with a towel or sheet throughout the session — only the area being worked on is uncovered.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can couples book a session together?</span>
+          <span class="faq-plus"></span>
+        </button>
+        <div class="faq-a"><p>Yes — our couple spa suite is built for exactly that. Message us on WhatsApp with your preferred date and time and we'll hold both slots side by side.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Do I need to book an appointment in advance?</span>
+          <span class="faq-plus"></span>
+        </button>
+        <div class="faq-a"><p>Walk-ins are welcome when a room is free, but weekend evenings fill up fast — a quick WhatsApp message a few hours ahead guarantees your slot.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Do you use organic products and oils?</span>
+          <span class="faq-plus"></span>
+        </button>
+        <div class="faq-a"><p>Yes — all our massage oils and herbal blends are cold-pressed and natural, chosen specifically to be gentle even on sensitive skin.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is your cancellation and rescheduling policy?</span>
+          <span class="faq-plus"></span>
+        </button>
+        <div class="faq-a"><p>We ask for at least 2 hours' notice to cancel or reschedule so the slot can be offered to someone else. Just send us a WhatsApp message and we'll sort it out.</p></div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="booking" class="booking">
+  <div class="wrap">
+    <div class="booking-grid">
+      <div class="booking-copy reveal">
+        <span class="eyebrow">Book a session</span>
+        <h2>Reserve your ritual</h2>
+        <p>Fill in a few details and we'll open WhatsApp with everything pre-filled — just hit send and we'll confirm your slot.</p>
+        <img class="booking-image" src="media/spa-details.jpg" alt="Spa oils, towels and candles laid out for a treatment" loading="lazy">
+      </div>
+      <form class="booking-form reveal" id="bookingForm">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="bName">Name</label>
+            <input type="text" id="bName" name="name" required placeholder="Your full name">
+          </div>
+          <div class="form-field">
+            <label for="bPhone">Phone</label>
+            <input type="tel" id="bPhone" name="phone" required placeholder="10-digit mobile number">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="bEmail">Email</label>
+            <input type="email" id="bEmail" name="email" placeholder="you@email.com">
+          </div>
+          <div class="form-field">
+            <label for="bTreatment">Treatment</label>
+            <select id="bTreatment" name="treatment">
+              <option>Oil / Cream Massage</option>
+              <option>Hot Oil Massage</option>
+              <option>Chocolate Massage</option>
+              <option>Wine Massage</option>
+              <option>Deep Tissue Massage</option>
+              <option>Traditional Thai Massage</option>
+              <option>Not sure yet — recommend something</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="bDate">Date</label>
+            <input type="date" id="bDate" name="date">
+          </div>
+          <div class="form-field">
+            <label for="bTime">Time</label>
+            <input type="time" id="bTime" name="time">
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="bMessage">Message</label>
+          <textarea id="bMessage" name="message" rows="3" placeholder="Anything we should know? (optional)"></textarea>
+        </div>
+        <button type="submit" class="btn-primary" data-magnetic><span>Book Appointment</span></button>
+        <p class="booking-note">This opens WhatsApp with your details filled in — no payment needed to reserve.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="visit" class="visit">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Find us</span>
+      <h2>Tucked into Jayanagar 9th Block</h2>
+    </div>
+    <div class="visit-grid reveal">
+      <div>
+        <div class="visit-row">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0 1 14 0c0 3.5-3 7-7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+          <div><span class="label">Address</span><span class="value">2nd Floor, 873, 28th Main Rd, Corporation Colony,<br>Jayanagara 9th Block, Jayanagar, Bengaluru, Karnataka 560069</span></div>
+        </div>
+        <div class="visit-row">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5c0 8.8 6.2 15 15 15l2-4-6-2-1.5 1.5A12 12 0 0 1 7.5 9.5L9 8 7 2 4 5Z"/></svg>
+          <div><span class="label">Phone</span><span class="value"><a href="tel:+919980508222">099805 08222</a></span></div>
+        </div>
+        <div class="visit-row">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <div><span class="label">Hours</span><span class="value">Open daily &middot; closes 10:00 pm</span></div>
+        </div>
+        <div class="visit-row">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <div><span class="label">Rating</span><span class="value">4.9 / 5 &middot; 111 Google reviews</span></div>
+        </div>
+      </div>
+      <div class="map-panel">
+        <div>
+          <h3>Ready when you are</h3>
+          <p>Sessions fill up fastest on weekend evenings — a quick WhatsApp message is the easiest way to lock in a slot.</p>
+        </div>
+        <div class="hero-cta-row" style="justify-content:flex-start;">
+          <a class="btn-primary" href="https://wa.me/919980508222" target="_blank" rel="noopener" data-magnetic><span>Message on WhatsApp</span></a>
+          <a class="btn-ghost" href="https://isiriglobalspa.com/" target="_blank" rel="noopener" data-magnetic>Visit website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <canvas id="pond-canvas"></canvas>
+  <div class="wrap">
+    <div class="footer-map-grid">
+      <div>
+        <span class="eyebrow">Find us</span>
+        <h3>Isiri Global Spa</h3>
+        <div class="footer-address-line">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0 1 14 0c0 3.5-3 7-7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+          <span>2nd Floor, 873, 28th Main Rd, Corporation Colony, Jayanagara 9th Block, Jayanagar, Bengaluru, Karnataka 560069</span>
+        </div>
+        <div class="footer-address-line">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <span>Open daily &middot; 9:30 am – 10:00 pm</span>
+        </div>
+        <a class="footer-directions" href="https://www.google.com/maps/search/?api=1&query=2nd+Floor%2C+873%2C+28th+Main+Rd%2C+Corporation+Colony%2C+Jayanagara+9th+Block%2C+Jayanagar%2C+Bengaluru%2C+Karnataka+560069" target="_blank" rel="noopener" data-magnetic>Get directions &rarr;</a>
+      </div>
+      <div class="footer-map-frame">
+        <iframe
+          src="https://www.google.com/maps?q=2nd+Floor%2C+873%2C+28th+Main+Rd%2C+Corporation+Colony%2C+Jayanagara+9th+Block%2C+Jayanagar%2C+Bengaluru%2C+Karnataka+560069&z=17&output=embed"
+          width="100%" height="100%" style="border:0" frameborder="0" allowfullscreen=""
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Google Map to Isiri Global Spa, Jayanagar, Bengaluru">
+        </iframe>
+      </div>
+    </div>
+    <div class="footer-row">
+      <div class="logo">Isiri Global <em>Spa</em></div>
+      <div>Jayanagar, Bengaluru &middot; Open daily until 10:00 pm</div>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-membership-cta" id="stickyCta">
+  <span class="sc-label">Unlock hours &amp; savings</span>
+  <a class="sc-btn" href="https://wa.me/919980508222?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Isiri%20Spa%20memberships" target="_blank" rel="noopener" data-magnetic><span>Become a Member</span></a>
+</div>
+
+<a class="whatsapp-float" href="https://wa.me/919980508222" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" data-magnetic>
+  <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor" aria-hidden="true">
+    <path d="M16.004 3C9.06 3 3.43 8.63 3.43 15.574c0 2.31.62 4.523 1.79 6.478L3 29l7.11-2.19a12.55 12.55 0 0 0 5.894 1.5h.005c6.943 0 12.573-5.63 12.573-12.574C28.582 8.79 22.99 3 16.004 3Zm0 22.85h-.004a10.44 10.44 0 0 1-5.323-1.457l-.382-.227-3.953 1.218 1.234-3.86-.249-.397a10.42 10.42 0 0 1-1.596-5.553c0-5.771 4.7-10.47 10.478-10.47 2.798 0 5.427 1.09 7.404 3.07a10.4 10.4 0 0 1 3.067 7.408c0 5.772-4.7 10.268-10.676 10.268Zm5.735-7.703c-.314-.157-1.857-.916-2.145-1.02-.288-.106-.497-.157-.706.157-.209.314-.81 1.02-.993 1.229-.183.209-.366.235-.68.078-.314-.157-1.326-.489-2.526-1.559-.934-.833-1.564-1.862-1.747-2.176-.183-.314-.02-.483.138-.64.14-.14.314-.366.471-.549.157-.183.209-.314.314-.523.105-.209.052-.393-.026-.549-.078-.157-.706-1.702-.968-2.331-.255-.613-.514-.53-.706-.54-.183-.01-.392-.012-.601-.012-.209 0-.549.078-.837.392-.288.314-1.098 1.073-1.098 2.618s1.124 3.037 1.28 3.246c.157.209 2.212 3.377 5.36 4.735.749.323 1.333.516 1.788.66.751.239 1.435.205 1.976.124.603-.09 1.857-.759 2.119-1.492.262-.732.262-1.361.183-1.492-.078-.13-.288-.209-.601-.366Z"/>
+  </svg>
+</a>
+
+<script src="script.js"></script>
+<script src="membership-offers.js"></script>
+<script src="hero-offers.js"></script>
+</body>
+</html>
